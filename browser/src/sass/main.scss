@@ -1,4 +1,7 @@
-@use "base";
+@use "base/normalize";
+@use "base/reset";
+@use "base/init";
+
 @use "components";
 @use "layout";
 @use "pages";
