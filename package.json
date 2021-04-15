@@ -4,6 +4,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node .",
+        "postinstall": "npm run build:sass",
         "build:sass": "sass --update browser/src/sass/main.scss browser/dist/css/main.css",
         "watch:sass": "sass --watch browser/src/sass/main.scss browser/dist/css/main.css"
     },
