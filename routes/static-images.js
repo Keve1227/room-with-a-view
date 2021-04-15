@@ -6,16 +6,16 @@ const router = new Router();
 
 router.get("/static/images/*", async (req, res, next) => {
     const { 0: fileName } = req.params;
-    const width = roundAndClip(parseInt(req.query["w"]), 0, 2048) || null;
-    const height = roundAndClip(parseInt(req.query["h"]), 0, 2048) || null;
-    const quality = roundAndClip(parseInt(req.query["q"]), 0, 100) || 80;
-
     const filePath = path.join(__static, "images", fileName);
 
     // Check that the path provided does not try to access files outside of ./static/images
     if (path.relative(path.join(__static, "images"), filePath).includes("..")) {
         return next();
     }
+
+    const width = roundAndClip(parseInt(req.query["w"]), 0, 2048) || null;
+    const height = roundAndClip(parseInt(req.query["h"]), 0, 2048) || null;
+    const quality = roundAndClip(parseInt(req.query["q"]), 0, 100) || 80;
 
     try {
         const data = await sharp(filePath)

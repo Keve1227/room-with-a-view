@@ -1,18 +1,19 @@
+@use "../abstracts" as *;
+
 img.icon {
     display: inline-block;
 
+    @include no-select;
+
     &.icon-small {
-        width: 1.5rem;
-        border-radius: 1.25rem;
+        height: 2.5rem;
     }
 
     &.icon-medium {
-        width: 2.5rem;
-        border-radius: 1.25rem;
+        height: 3.5rem;
     }
 
     &.icon-large {
-        width: 3.5rem;
-        border-radius: 1.25rem;
+        height: 5rem;
     }
 }

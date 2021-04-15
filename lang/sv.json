@@ -1,7 +1,16 @@
 {
     "pages": {
         "browse": {
-            "title": "Bläddring"
+            "title": "Bläddring",
+            "arias": {
+                "menu": "Meny"
+            },
+            "alts": {
+                "logotype": "Logotyp"
+            },
+            "inputs": {
+                "filter_query": "Sök"
+            }
         }
     }
 }

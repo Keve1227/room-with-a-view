@@ -1,7 +1,16 @@
 {
     "pages": {
         "browse": {
-            "title": "Browse"
+            "title": "Browse",
+            "arias": {
+                "menu": "Menu"
+            },
+            "alts": {
+                "logotype": "Logotype"
+            },
+            "inputs": {
+                "filter_query": "Search"
+            }
         }
     }
 }
