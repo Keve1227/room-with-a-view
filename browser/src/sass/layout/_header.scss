@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+header {
+    color: white;
+    background-color: $color-primary;
+    // box-shadow: 0 5px 10px 5px $color-shadow;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        height: 5rem;
+        padding: 0.5rem;
+
+        // Set the width of the logo
+        & > :nth-child(1) {
+            width: 10rem;
+        }
+
+        #user-profile {
+            padding: 0.5rem;
+
+            > img {
+                cursor: pointer;
+            }
+        }
+    }
+}

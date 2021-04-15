@@ -1,0 +1,18 @@
+img.icon {
+    display: inline-block;
+
+    &.icon-small {
+        width: 1.5rem;
+        border-radius: 1.25rem;
+    }
+
+    &.icon-medium {
+        width: 2.5rem;
+        border-radius: 1.25rem;
+    }
+
+    &.icon-large {
+        width: 3.5rem;
+        border-radius: 1.25rem;
+    }
+}

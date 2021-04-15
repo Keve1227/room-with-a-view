@@ -1,0 +1,11 @@
+#browse-page {
+    main > div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+        > aside {
+            grid-row: 1/3;
+        }
+    }
+}
