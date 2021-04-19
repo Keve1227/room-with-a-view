@@ -114,7 +114,7 @@ html input[disabled],
 input[type="checkbox"],
 input[type="radio"],
 input[type="search"] {
-    width: 100%;
+    display: block;
     border: none;
     background-image: none;
     background-color: transparent;
