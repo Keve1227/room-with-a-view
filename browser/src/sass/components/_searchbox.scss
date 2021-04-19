@@ -13,6 +13,7 @@
     input {
         padding: 0.5rem;
         border-bottom: $border-width solid $color-highlight;
+        min-width: 0;
     }
 
     .icon {
