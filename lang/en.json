@@ -8,8 +8,12 @@
             "alts": {
                 "logotype": "Logotype"
             },
-            "inputs": {
-                "filter_query": "Search"
+            "search": "Search",
+            "sort": "Sort by",
+            "filter": "Filter",
+            "sort_order": {
+                "a_z": "A-Z",
+                "popular": "Popularity"
             }
         }
     }

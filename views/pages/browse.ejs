@@ -1,12 +1,29 @@
-<form class="filters" id="filter-form">
-    <div class="searchbox">
-        <input
-            type="search"
-            name="filter_query"
-            autocapitalize="none"
-            autocomplete="off"
-            autocorrect="off"
-            placeholder="<%= locale.inputs.filter_query %>"
-        />
-    </div>
-</form>
+<aside>
+    <form id="search-form">
+        <div>
+            <div class="searchbox">
+                <input type="search" name="filter_query" autocapitalize="none" autocomplete="off" autocorrect="off"
+                    placeholder="<%= locale.search %>" />
+                <button type="submit">
+                    <img class="icon icon-small" src="/static/svg/vendors/lineicons/search-alt.svg" alt>
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <div class="dropdown-button">
+                <%= locale.filter %>
+            </div>
+
+            <select class="dropdown-button" name="sort_by">
+                <option value hidden selected><%= locale.sort %></option>
+
+                <% for (const [value, name] of Object.entries(locale.sort_order)) { %>
+                <option value="<%= value %>">
+                    <%= name %>
+                </option>
+                <% } %>
+            </select>
+        </div>
+    </form>
+</aside>

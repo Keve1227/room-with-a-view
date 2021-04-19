@@ -8,8 +8,12 @@
             "alts": {
                 "logotype": "Logotyp"
             },
-            "inputs": {
-                "filter_query": "Sök"
+            "search": "Sök",
+            "sort": "Sortera efter",
+            "filter": "Filtrera",
+            "sort_order": {
+                "a_z": "A-Ö",
+                "popular": "Populäritet"
             }
         }
     }

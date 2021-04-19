@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/static/css/main.css" />
 
-        <title>Room with a View - <%= locale.title %></title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/main.css" />
 
-    <body id="<%= pageId %>">
-        <header>
-            <div>
-                <div class=".logotype-container">
-                    <a href="/">
-                        <picture>
-                            <source media="(min-width: 600px)" srcset="/static/svg/logo.svg" />
-                            <img
-                                class="icon icon-small"
-                                src="/static/svg/icon.svg"
-                                alt="<%= locale.alts.logotype %>"
-                            />
-                        </picture>
-                    </a>
-                </div>
+    <title>Room with a View - <%= locale.title %></title>
+</head>
 
-                <div class=".menu-button" aria-label="<%= locale.arias.menu %>">
-                    <img class="icon icon-small" src="/static/svg/vendors/lineicons/menu.svg" alt />
-                </div>
+<body id="<%= pageId %>">
+    <header>
+        <div>
+            <div class=".logotype-container">
+                <a href="/">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="/static/svg/logo.svg" />
+                        <img class="icon icon-small" src="/static/svg/icon.svg" alt="<%= locale.alts.logotype %>" />
+                    </picture>
+                </a>
             </div>
-        </header>
 
-        <%- include(contentPath); %>
-    </body>
+            <div class=".menu-button" aria-label="<%= locale.arias.menu %>">
+                <img class="icon icon-small" src="/static/svg/vendors/lineicons/menu.svg" alt />
+            </div>
+        </div>
+    </header>
+
+    <%- include(contentPath); %>
+</body>
+
 </html>
