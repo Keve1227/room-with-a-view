@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.dropdown-button {
+    display: flex;
+    align-items: center;
+
+    margin: 0 1rem;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+
+    @include no-select;
+
+    option {
+        color: $color-text-1;
+    }
+}

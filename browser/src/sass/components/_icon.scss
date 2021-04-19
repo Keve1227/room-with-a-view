@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+img.icon {
+    display: inline-block;
+
+    @include no-select;
+
+    &.icon-small {
+        height: 2rem;
+    }
+
+    &.icon-medium {
+        height: 3rem;
+    }
+
+    &.icon-large {
+        height: 4rem;
+    }
+}

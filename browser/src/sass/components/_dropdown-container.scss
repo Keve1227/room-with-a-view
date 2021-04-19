@@ -1,4 +1,4 @@
-@use "abstracts" as *;
+@use "../abstracts" as *;
 
 .dropdown-container {
     position: relative;
@@ -23,25 +23,4 @@
     &:hover .dropdown {
         display: unset;
     }
-}
-
-img.icon {
-    display: inline-block;
-
-    @include no-select;
-
-    &.icon-small {
-        height: 2.5rem;
-    }
-
-    &.icon-medium {
-        height: 3.5rem;
-    }
-
-    &.icon-large {
-        height: 5rem;
-    }
-}
-
-.searchbox {
 }

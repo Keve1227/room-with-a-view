@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+#browse-page {
+    aside {
+        border-bottom: $border-width solid $color-highlight;
+        background-color: $color-primary;
+        color: $color-highlight;
+    }
+
+    #search-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding-bottom: 1rem;
+
+        > div {
+            display: flex;
+            margin-top: 1rem;
+
+            align-items: center;
+        }
+
+        @media screen and (min-width: 800px) {
+            flex-direction: row-reverse;
+        }
+    }
+}

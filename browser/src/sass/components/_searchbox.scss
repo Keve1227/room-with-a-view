@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.searchbox {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    width: 25rem;
+    max-width: 40rem;
+
+    margin: auto;
+    padding: 0 1rem;
+
+    input {
+        padding: 0.5rem;
+        border-bottom: $border-width solid $color-highlight;
+    }
+
+    .icon {
+        margin-left: 0.5rem;
+        filter: $color-filter-highlight;
+    }
+}
