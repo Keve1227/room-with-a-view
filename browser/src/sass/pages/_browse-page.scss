@@ -8,17 +8,23 @@
     }
 
     #search-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        margin-bottom: 1rem;
-
-        > div {
+        > :first-child {
             display: flex;
-            margin-top: 1rem;
+            flex-direction: column;
+            justify-content: space-between;
 
-            align-items: center;
+            margin-bottom: 1rem;
+
+            > div {
+                display: flex;
+                margin-top: 1rem;
+
+                align-items: center;
+            }
+        }
+
+        .icon {
+            filter: $color-filter-highlight;
         }
 
         @media screen and (min-width: 800px) {

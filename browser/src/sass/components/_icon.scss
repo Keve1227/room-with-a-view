@@ -5,6 +5,11 @@ img.icon {
 
     @include no-select;
 
+    &.icon-inline {
+        width: 1.5em;
+        margin: 0 1rem;
+    }
+
     &.icon-small {
         height: 2rem;
     }
