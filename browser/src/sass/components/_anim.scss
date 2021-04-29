@@ -1,0 +1,11 @@
+.anim {
+    transition: transform 0.1s ease;
+
+    &.hflip {
+        transform: scaleY(-1);
+    }
+
+    &.hcollapse {
+        transform: translateY(-50%) scaleY(0);
+    }
+}

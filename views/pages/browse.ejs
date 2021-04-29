@@ -15,7 +15,8 @@
                 <div @click="toggleFiltersShown" class="dropdown-button">
                     <%= locale.filter %>
 
-                    <img class="icon icon-inline" src="/static/svg/vendors/lineicons/chevron-down.svg">
+                    <img class="icon icon-inline anim" :class='{ "hflip": !filtersShown }'
+                        src="/static/svg/vendors/lineicons/chevron-down.svg">
                 </div>
 
                 <select class="dropdown-button" name="sort_by">
@@ -28,6 +29,10 @@
                     <% } %>
                 </select>
             </div>
+        </div>
+
+        <div v-cloak class="anim" :class="{ 'hcollapse': !filtersShown }">
+            Hello!
         </div>
     </form>
 </aside>
