@@ -2,8 +2,8 @@ require("dotenv").config();
 
 const path = require("path");
 
-global.__static = path.resolve(__dirname, "./static");
-global.__views = path.resolve(__dirname, "./views");
+global.__static = path.resolve(__dirname, "static");
+global.__views = path.resolve(__dirname, "views");
 
 const app = require("./app");
 

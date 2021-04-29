@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.highlight-box {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
+    background-color: $color-foreground;
+    border: $border-width solid $color-highlight;
+    border-radius: $border-width;
+}
+
+.filter-box {
+    padding: 0.2rem 0.3rem;
+    border: $border-width solid $color-highlight;
+    border-radius: $border-width * 4;
+}

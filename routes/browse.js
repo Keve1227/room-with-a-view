@@ -8,7 +8,7 @@ router.get("/browse", async (req, res, next) => {
         "default",
         {
             pageId: "browse-page",
-            contentPath: path.join(__views, "./pages/browse.ejs"),
+            contentPath: path.join(__views, "pages", "browse.ejs"),
             locale: req.locale.pages.browse,
             lang: req.locale.__name,
         },

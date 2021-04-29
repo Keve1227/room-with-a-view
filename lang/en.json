@@ -14,7 +14,10 @@
             "sort_order": {
                 "a_z": "A-Z",
                 "popular": "Popularity"
-            }
+            },
+            "country": "Country",
+            "brand": "Brand",
+            "available": "Availability"
         }
     }
 }

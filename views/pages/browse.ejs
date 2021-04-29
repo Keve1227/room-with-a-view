@@ -1,10 +1,10 @@
 <aside>
-    <form id="search-form">
+    <form @submit.prevent="submitOptions($event.target)" id="search-form">
         <div>
             <div>
                 <div class="searchbox">
-                    <input type="search" name="filter_query" autocapitalize="none" autocomplete="off" autocorrect="off"
-                        placeholder="<%= locale.search %>" />
+                    <input v-model="options.query" type="search" autocapitalize="none" autocomplete="off"
+                        autocorrect="off" placeholder="<%= locale.search %>" />
                     <button type="submit">
                         <img class="icon icon-small" src="/static/svg/vendors/lineicons/search-alt.svg" alt>
                     </button>
@@ -19,8 +19,8 @@
                         src="/static/svg/vendors/lineicons/chevron-down.svg">
                 </div>
 
-                <select class="dropdown-button" name="sort_by">
-                    <option value hidden selected><%= locale.sort %></option>
+                <select @change="onSelectOption($event)" class="dropdown-button" name="sort_by">
+                    <option value hidden selected><%= locale.sort %>&nbsp;&nbsp;&#x25BE;</option>
 
                     <% for (const [value, name] of Object.entries(locale.sort_order)) { %>
                     <option value="<%= value %>">
@@ -32,7 +32,35 @@
         </div>
 
         <div v-cloak class="anim" :class="{ 'hcollapse': !filtersShown }">
-            Hello!
+            <div>
+                <select @change="onSelectOption($event)" class="dropdown-button highlight-box" name="filter_country">
+                    <option value hidden selected><%= locale.country %>&nbsp;&nbsp;&#x25BE;</option>
+
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                </select>
+
+                <select @change="onSelectOption($event)" class="dropdown-button highlight-box" name="filter_brand">
+                    <option value hidden selected><%= locale.brand %>&nbsp;&nbsp;&#x25BE;</option>
+
+                    <option value="1">C</option>
+                    <option value="2">D</option>
+                </select>
+
+                <select @change="onSelectOption($event)" class="dropdown-button highlight-box" name="filter_available">
+                    <option value hidden selected><%= locale.available %>&nbsp;&nbsp;&#x25BE;</option>
+
+                    <option value="1">E</option>
+                    <option value="2">F</option>
+                </select>
+            </div>
+
+            <div id="filter-tags">
+                <div class="filter-box" v-for="filterTag in filterTags" @click="removeFilterTag(filterTag)">
+                    {{filterTag.name}}
+                    <img class="icon icon-inline" src="/static/svg/vendors/lineicons/cross-circle.svg">
+                </div>
+            </div>
         </div>
     </form>
 </aside>

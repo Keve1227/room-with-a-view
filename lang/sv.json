@@ -14,7 +14,10 @@
             "sort_order": {
                 "a_z": "A-Ö",
                 "popular": "Populäritet"
-            }
+            },
+            "country": "Land",
+            "brand": "Kedja",
+            "available": "Tillgänglighet"
         }
     }
 }
