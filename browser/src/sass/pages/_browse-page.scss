@@ -47,12 +47,24 @@
                     @include no-select;
                 }
 
-                &#filter-tags > div {
-                    display: grid;
-                    grid-template-columns: 1fr auto;
-
+                &#filter-tags {
                     color: $color-text-2;
-                    cursor: pointer;
+
+                    h1 {
+                        width: 100%;
+                        color: $color-text-1;
+                    }
+
+                    small {
+                        font-style: italic;
+                    }
+
+                    > div {
+                        display: grid;
+                        grid-template-columns: 1fr auto;
+
+                        cursor: pointer;
+                    }
                 }
             }
         }

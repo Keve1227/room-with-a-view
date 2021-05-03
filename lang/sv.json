@@ -17,7 +17,9 @@
             },
             "country": "Land",
             "brand": "Kedja",
-            "available": "Tillgänglighet"
+            "available": "Tillgänglighet",
+            "selected_filters": "Valda Filter",
+            "no_filters": "Inga filter valda"
         }
     }
 }

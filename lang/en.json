@@ -17,7 +17,9 @@
             },
             "country": "Country",
             "brand": "Brand",
-            "available": "Availability"
+            "available": "Availability",
+            "selected_filters": "Selected Filters",
+            "no_filters": "No filters selected"
         }
     }
 }

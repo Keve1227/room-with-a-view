@@ -56,6 +56,10 @@
             </div>
 
             <div id="filter-tags">
+                <h1><%= locale.selected_filters %></h1>
+
+                <small v-if="filterTags.length === 0"><%= locale.no_filters %></small>
+
                 <div class="filter-box" v-for="filterTag in filterTags" @click="removeFilterTag(filterTag)">
                     {{filterTag.name}}
                     <img class="icon icon-inline" src="/static/svg/vendors/lineicons/cross-circle.svg">
