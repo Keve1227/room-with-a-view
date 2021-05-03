@@ -16,6 +16,10 @@
         padding: 0.5rem;
         border-bottom: $border-width solid $color-highlight;
         min-width: 0;
+
+        @media screen and (min-width: 800px) {
+            border-bottom: unset;
+        }
     }
 
     .icon {
