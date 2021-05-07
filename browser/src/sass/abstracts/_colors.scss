@@ -5,6 +5,7 @@ $foreground: #ffffff;
 $text-1: rgb(0, 0, 0);
 $text-2: rgba(133, 133, 133, 0.6);
 
+// Filters courtesy of https://codepen.io/sosuke/pen/Pjoqqp
 $filter-highlight: invert(81%) sepia(61%) saturate(643%) hue-rotate(352deg) brightness(93%)
     contrast(92%);
 $filter-foreground: invert(100%);
