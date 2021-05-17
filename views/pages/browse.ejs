@@ -1,5 +1,5 @@
 <aside>
-    <form @submit.prevent="submitOptions($event.target)" id="search-form">
+    <form @submit.prevent="submit()" id="search-form">
         <div>
             <div>
                 <div class="searchbox">
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div v-cloak class="anim" :class="{ 'hcollapse': !filtersShown }">
+        <div v-cloak class="anim" :class='{ "hcollapse": !filtersShown }'>
             <div>
                 <select @change="onSelectOption($event)" class="dropdown-button highlight-box" name="filter_country">
                     <option value hidden selected><%= locale.country %>&nbsp;&nbsp;&#x25BE;</option>
@@ -68,5 +68,9 @@
         </div>
     </form>
 </aside>
+
+<main>
+
+</main>
 
 <script src="/static/js/browse.js"></script>

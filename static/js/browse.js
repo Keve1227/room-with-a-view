@@ -7,19 +7,20 @@ const app = new Vue({
             filters: {
                 country: {
                     collection: [],
-                    names: {},
+                    names: [],
                 },
                 brand: {
                     collection: [],
-                    names: {},
+                    names: [],
                 },
                 available: {
                     collection: [],
-                    names: {},
+                    names: [],
                 },
             },
             sort_by: "popular",
         },
+        results: {},
     },
     computed: {
         filterTags() {
@@ -28,7 +29,7 @@ const app = new Vue({
                 (tags, [category, { collection, names }]) => [
                     ...tags,
                     ...collection.map((value) => ({
-                        name: names[value],
+                        name: new Map(names).get(value),
                         category,
                         value,
                     })),
@@ -36,6 +37,11 @@ const app = new Vue({
                 []
             );
         },
+    },
+    mounted() {
+        const url = new URL(window.location);
+        const options = JSON.parse(url.searchParams.get("q") || "{}");
+        safeAssignObject(this.options, options);
     },
     methods: {
         toggleFiltersShown() {
@@ -56,14 +62,16 @@ const app = new Vue({
 
                     const filterCategory = this.options.filters[id];
                     const filters = new Set(filterCategory.collection);
-                    const names = this.options.filters[id].names;
+                    const names = new Map(this.options.filters[id].names);
 
                     // Use a Set to ensure that there's no filter values.
                     filters.add(selectElement.value);
                     filterCategory.collection = [...filters]; // Update the original array.
 
                     // Make a localized dictionary entry for this filter value.
-                    names[selectElement.value] = selectedOption.textContent;
+                    names.set(selectElement.value, selectedOption.textContent);
+                    this.options.filters[id].names = [...names.entries()];
+
                     break;
                 default:
                     // Otherwise:
@@ -76,7 +84,7 @@ const app = new Vue({
             selectElement.selectedIndex = 0;
 
             // Submit the form.
-            this.submitOptions(selectElement.form);
+            this.submit();
         },
         removeFilterTag(filterTag) {
             const filterCategory = this.options.filters[filterTag.category];
@@ -86,10 +94,36 @@ const app = new Vue({
             filterCategory.collection = [...filters]; // Update the original array.
 
             // Submit the form.
-            this.submitOptions(selectElement.form);
+            this.submit();
         },
-        submitOptions(form) {
-            console.log(form);
+        async submit() {
+            window.history.pushState(
+                null,
+                null,
+                `/browse?q=${encodeURIComponent(JSON.stringify(this.options))}`
+            );
+
+            try {
+                const response = await axios.post("/browse", this.options);
+                this.results = response;
+            } catch (err) {
+                const response = err.response;
+                // TODO: Handle error.
+            }
         },
     },
 });
+
+function safeAssignObject(target, source) {
+    for (const [p] of Object.entries(target)) {
+        if (source[p] == null) continue;
+        if (typeof target[p] !== typeof source[p]) continue;
+
+        if (typeof target[p] === "object" && !Array.isArray(target[p])) {
+            safeAssignObject(target[p], source[p]);
+        } else {
+            target[p] = source[p];
+            console.log(p);
+        }
+    }
+}
