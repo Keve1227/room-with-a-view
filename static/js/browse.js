@@ -1,3 +1,4 @@
+// Create a new Vue instance on #app.
 const app = new Vue({
     el: "#app",
     data: {
@@ -39,6 +40,7 @@ const app = new Vue({
         },
     },
     mounted() {
+        // When the site loads, set the filters to match those in the URL.
         const url = new URL(window.location);
         const options = JSON.parse(url.searchParams.get("q") || "{}");
         safeAssignObject(this.options, options);
@@ -114,6 +116,12 @@ const app = new Vue({
     },
 });
 
+/**
+ * Recursively assign values in target object (replacing arrays) with corresponding values in the source object.
+ *
+ * @param {*} target
+ * @param {*} source
+ */
 function safeAssignObject(target, source) {
     for (const [p] of Object.entries(target)) {
         if (source[p] == null) continue;
