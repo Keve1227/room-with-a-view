@@ -73,4 +73,30 @@
             filter: $color-filter-highlight;
         }
     }
+
+    main {
+        #search-results {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem 0.75rem;
+
+            margin: 2.5rem 1.5rem;
+
+            > * {
+                background-color: $color-foreground;
+                aspect-ratio: 1.6;
+
+                border: $border-width solid $color-highlight;
+                border-radius: $border-width;
+            }
+
+            @media screen and (min-width: 800px) {
+                grid-template-columns: 1fr 1fr;
+
+                :first-child {
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+    }
 }
