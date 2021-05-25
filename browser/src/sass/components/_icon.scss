@@ -7,18 +7,25 @@ img.icon {
 
     &.icon-inline {
         width: 1em;
+        min-width: 1em;
         margin-left: 1rem;
     }
 
     &.icon-small {
         height: 2rem;
+        min-height: 2em;
+        min-width: 2em;
     }
 
     &.icon-medium {
         height: 3rem;
+        min-height: 3em;
+        min-width: 3em;
     }
 
     &.icon-large {
         height: 4rem;
+        min-height: 4em;
+        min-width: 4em;
     }
 }

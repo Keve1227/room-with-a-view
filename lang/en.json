@@ -19,7 +19,9 @@
             "brand": "Brand",
             "available": "Availability",
             "selected_filters": "Selected Filters",
-            "no_filters": "No filters selected"
+            "no_filters": "No filters selected",
+            "rooms_left_prefix": "",
+            "rooms_left_suffix": " rooms left"
         }
     }
 }

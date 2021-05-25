@@ -21,7 +21,25 @@ const app = new Vue({
             },
             sort_by: "popular",
         },
-        results: {},
+        results: [
+            {
+                title: {
+                    sv: "Hotell Södra Berget",
+                    en: 'Hotel "Södra Berget"',
+                },
+                images: [
+                    {
+                        src: "/static/images/articles/hotell_sodra_berget/2017_01_hotell_sodra_berget_-_spa_terass_pool_utsikt_fonster_brasa-1000x600.jpg",
+                        alts: {
+                            sv: "Utsikt från inomhuspoolen",
+                            en: "View from the indoor pool",
+                        },
+                    },
+                ],
+                available: 5,
+                rating: 3.5,
+            },
+        ],
     },
     computed: {
         filterTags() {
@@ -37,6 +55,9 @@ const app = new Vue({
                 ],
                 []
             );
+        },
+        lang() {
+            return document.documentElement.lang;
         },
     },
     mounted() {
@@ -131,7 +152,6 @@ function safeAssignObject(target, source) {
             safeAssignObject(target[p], source[p]);
         } else {
             target[p] = source[p];
-            console.log(p);
         }
     }
 }

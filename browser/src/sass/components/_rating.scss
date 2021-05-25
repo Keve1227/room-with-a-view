@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.rating {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    @include no-select;
+
+    > img {
+        filter: $color-filter-highlight;
+    }
+}

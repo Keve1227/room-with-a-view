@@ -83,12 +83,43 @@
 
         margin: 2.5rem 1.5rem;
 
-        > * {
+        > article {
+            display: grid;
+            grid-template-columns: auto 1fr min-content;
+            grid-template-areas:
+                "im im im"
+                "h1 h1 h1"
+                "av .  rt";
+
+            gap: 1rem;
+            padding: 0.75rem;
+
             background-color: $color-foreground;
-            aspect-ratio: 1.6;
+            // aspect-ratio: 1.6;
 
             border: $border-width solid $color-highlight;
             border-radius: $border-width;
+
+            > img {
+                grid-area: im;
+
+                width: 100%;
+            }
+
+            > h1 {
+                grid-area: h1;
+
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+
+            > .filter-box {
+                grid-area: av;
+            }
+
+            > .rating {
+                grid-area: rt;
+            }
         }
 
         // Over mobile-size:
@@ -97,7 +128,7 @@
             grid-template-columns: repeat(2, 1fr);
 
             // And make the #1 result HUGE.
-            :first-child {
+            > :first-child {
                 grid-column: 1 / 3;
             }
         }

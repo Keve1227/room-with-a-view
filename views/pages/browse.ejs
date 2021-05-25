@@ -71,23 +71,23 @@
 
 <main>
     <div id="search-results">
-        <article></article>
+        <article v-for="result in results">
+            <img src :alt='result.images[0].alts[lang] || result.images[0].alts["en"]'
+                :data-src='result.images[0].src || "/static/images/missing.png"' data-meta="w=2&h=1">
 
-        <article></article>
+            <h1>{{result.title[lang] || result.title["en"]}}</h1>
 
-        <article></article>
+            <div class="filter-box">
+                <%= locale.rooms_left_prefix %> {{result.available}} <%= locale.rooms_left_suffix %>
+            </div>
 
-        <article></article>
-
-        <article></article>
-
-        <article></article>
-
-        <article></article>
-
-        <article></article>
-
-        <article></article>
+            <div class="rating">
+                <img class="icon icon-small" v-for="i in Math.round(result.rating)"
+                    src="/static/svg/vendors/lineicons/star-filled.svg">
+                <img class="icon icon-small" v-for="i in (5 - Math.round(result.rating))"
+                    src="/static/svg/vendors/lineicons/star.svg">
+            </div>
+        </article>
     </div>
 </main>
 

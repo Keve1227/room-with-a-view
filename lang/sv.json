@@ -19,7 +19,9 @@
             "brand": "Kedja",
             "available": "Tillgänglighet",
             "selected_filters": "Valda Filter",
-            "no_filters": "Inga filter valda"
+            "no_filters": "Inga filter valda",
+            "rooms_left_prefix": "",
+            "rooms_left_suffix": " rum kvar"
         }
     }
 }
