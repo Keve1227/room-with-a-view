@@ -73,10 +73,10 @@
 <main>
 
     <!-- Search results -->
-    <div id="search-results" v-cloak>
+    <div id="search-results">
 
         <!-- For every result: -->
-        <article v-for="result in results">
+        <article v-cloak v-for="result in results">
 
             <!-- Pick the right src and alt. Alts default to English. -->
             <img src :alt='result.images[0].alts[lang] || result.images[0].alts["en"]'
