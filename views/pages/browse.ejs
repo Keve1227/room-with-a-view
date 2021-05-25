@@ -1,3 +1,4 @@
+<!-- Filters -->
 <aside>
     <form @submit.prevent="submit()" id="search-form">
         <div>
@@ -70,17 +71,25 @@
 </aside>
 
 <main>
+
+    <!-- Search results -->
     <div id="search-results">
+
+        <!-- For every result: -->
         <article v-for="result in results">
+
+            <!-- Pick the right src and alt. Alts default to English. -->
             <img src :alt='result.images[0].alts[lang] || result.images[0].alts["en"]'
                 :data-src='result.images[0].src || "/static/images/missing.png"' data-meta="w=2&h=1">
 
+            <!-- Display the title. The title defaults to English. -->
             <h1>{{result.title[lang] || result.title["en"]}}</h1>
 
             <div class="filter-box">
                 <%= locale.rooms_left_prefix %> {{result.available}} <%= locale.rooms_left_suffix %>
             </div>
 
+            <!-- Varying amounts of filled stars depending on the rating. -->
             <div class="rating">
                 <img class="icon icon-small" v-for="i in Math.round(result.rating)"
                     src="/static/svg/vendors/lineicons/star-filled.svg">
