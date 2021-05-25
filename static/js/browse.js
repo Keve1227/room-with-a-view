@@ -29,7 +29,7 @@ const app = new Vue({
                 },
                 images: [
                     {
-                        src: "/static/images/articles/hotell_sodra_berget/2017_01_hotell_sodra_berget_-_spa_terass_pool_utsikt_fonster_brasa-1000x600.jpg",
+                        src: "/static/images/articles/hotell_sodra_berget/2017_01_hotell_sodra_berget_-_spa_terass_pool_utsikt_fonster_brasa-1000x600.png",
                         alts: {
                             sv: "Utsikt från inomhuspoolen",
                             en: "View from the indoor pool",
