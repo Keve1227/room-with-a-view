@@ -21,7 +21,9 @@
                 margin-top: 1rem;
             }
 
-            @media screen and (min-width: 800px) {
+            // Over tablet-size:
+            @media screen and (min-width: 1000px) {
+                // Set the search bar to the side.
                 flex-direction: row-reverse;
             }
         }
@@ -74,28 +76,29 @@
         }
     }
 
-    main {
-        #search-results {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem 0.75rem;
+    main #search-results {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem 0.75rem;
 
-            margin: 2.5rem 1.5rem;
+        margin: 2.5rem 1.5rem;
 
-            > * {
-                background-color: $color-foreground;
-                aspect-ratio: 1.6;
+        > * {
+            background-color: $color-foreground;
+            aspect-ratio: 1.6;
 
-                border: $border-width solid $color-highlight;
-                border-radius: $border-width;
-            }
+            border: $border-width solid $color-highlight;
+            border-radius: $border-width;
+        }
 
-            @media screen and (min-width: 800px) {
-                grid-template-columns: 1fr 1fr;
+        // Over mobile-size:
+        @media screen and (min-width: 700px) {
+            // Make the results appear in two columns.
+            grid-template-columns: repeat(2, 1fr);
 
-                :first-child {
-                    grid-column: 1 / 3;
-                }
+            // And make the #1 result HUGE.
+            :first-child {
+                grid-column: 1 / 3;
             }
         }
     }
