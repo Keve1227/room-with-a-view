@@ -1,7 +1,7 @@
 document.querySelectorAll("img[data-src]").forEach((img) => {
     img.setAttribute(
         "src",
-        "/static/images/empty.png?" + img.getAttribute("data-meta") ?? "w=1&h=1"
+        "/static/images/empty.png?" + img.getAttribute("data-meta") || "w=1&h=1"
     );
     img.removeAttribute("data-meta");
 
@@ -11,8 +11,8 @@ document.querySelectorAll("img[data-src]").forEach((img) => {
         const url = new URL(img.getAttribute("data-src"), document.baseURI);
         const { width, height } = window.getComputedStyle(img);
 
-        url.searchParams.set("w", img.getAttribute("data-width") ?? width);
-        url.searchParams.set("h", img.getAttribute("data-height") ?? height);
+        url.searchParams.set("w", img.getAttribute("data-width") || width);
+        url.searchParams.set("h", img.getAttribute("data-height") || height);
         if (img.getAttribute("data-quality"))
             url.searchParams.set("q", img.getAttribute("data-quality"));
 
